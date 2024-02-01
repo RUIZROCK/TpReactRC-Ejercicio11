@@ -43,6 +43,14 @@ function App() {
 
   const categorias = definirCategorias();
 
+  const filtrarPorCat=(cat)=>{
+    if(cat==""){
+      consultarAPI();
+    }else{
+    const resultados= categorias.filter((c)=> cat!==c);
+    return resultados;
+    }
+  }
 
   const definirPais = () => {
     if (resultados !== null || resultados.length !== 0) {
@@ -61,6 +69,14 @@ function App() {
 
   const pais = definirPais();
 
+  const filtrarPorPais=(pa)=>{
+    if(pa==""){
+      consultarAPI();
+    }else{
+      const resultados= pais.filter((c)=> pa!==c);
+      return resultados;
+    }
+  }
 
   return (
     <>
